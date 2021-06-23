@@ -36,3 +36,7 @@ p {
   width: 3em;
   background: coral;
 }
+
+.text {
+  font-style: italic;
+} 

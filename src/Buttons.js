@@ -1,3 +1,5 @@
+import React from 'react';
+
 class Buttons extends React.Component {
     state = {
         button: 'repeat all'
