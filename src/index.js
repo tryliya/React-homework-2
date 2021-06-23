@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Checkbox from './Checkbox.js';
+import Buttons from './Buttons';
+import TextItalic from './TextItalic';
 
 const Text = ({label, color, size, underline}) => {   
   return <div className="text" style={{color: color, fontSize: size, textDecoration: underline ? 'underline' : 'none'}}> {label} </div>
@@ -28,6 +30,8 @@ ReactDOM.render(
       <Square className="small" text="The smallest one"/> 
     </div>
     <Checkbox/>
+    <Buttons/>
+    <TextItalic/>
   </React.StrictMode>,
   document.getElementById('root')
 );
