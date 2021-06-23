@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Checkbox from './Checkbox.js';
 
 const Text = ({label, color, size, underline}) => {   
   return <div className="text" style={{color: color, fontSize: size, textDecoration: underline ? 'underline' : 'none'}}> {label} </div>
@@ -26,6 +27,7 @@ ReactDOM.render(
       <Square className="less" text="A less square"/>
       <Square className="small" text="The smallest one"/> 
     </div>
+    <Checkbox/>
   </React.StrictMode>,
   document.getElementById('root')
 );
