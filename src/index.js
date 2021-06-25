@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App.js';
 import './index.css';
+import Loader from './Loader';
 
 const Text = ({label, color, size, underline}) => {   
   return <div className="text" style={{color: color, fontSize: size, textDecoration: underline ? 'underline' : 'none'}}> {label} </div>
@@ -14,18 +16,8 @@ const Square = ({ className, text}) => {
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="text_container">
-      <Text label="Regular text" color= "grey" size={20} underline={false}/>
-      <Text label="Huge header" color= "black" size={50} underline={false}/>
-      <Text label="Danger notification" color= "red" size={20} underline={false}/>
-      <Text label="Underlined text" color= "black" size={30} underline={true}/>
-    </div>
-    
-    <div clasName="square_container">
-      <Square className="big" text="BIG square"/>
-      <Square className="less" text="A less square"/>
-      <Square className="small" text="The smallest one"/> 
-    </div>
+    <Loader/>,
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
