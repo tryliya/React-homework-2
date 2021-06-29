@@ -36,3 +36,11 @@ p {
   width: 3em;
   background: coral;
 }
+
+.container {
+  margin: 1rem;
+  width: 350px;
+  height: 100px;
+  border: 1px solid black;
+  text-align: center;
+}
