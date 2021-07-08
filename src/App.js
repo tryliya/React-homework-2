@@ -1,22 +1,21 @@
 import './App.css';
+import { Tap } from './Tap.js';
 
 function App() {
+    let inConsole = () => {
+        console.log('Первая кнопка была нажата')
+      }
+      let inAlert = () => {
+        alert('Кнопка 2 была нажата')
+      }
+      let inConsoleWithArg = (element) => {
+        console.log(element)
+      }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrap">
+      <Tap label="Кнопка 1" onClick={inConsole}/>
+      <Tap label="Кнопка вторая" onClick={inAlert}/>
+      <Tap label ="Кнопка с параметром" onClick={() => inConsoleWithArg('Функция с параметром: кнопка с параметром')}/>
     </div>
   );
 }
