@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.js';
 import './index.css';
+import Checkbox from './Checkbox.js';
+import Buttons from './Buttons';
+import TextItalic from './TextItalic';
 
 import App from './App';
 
@@ -18,6 +21,7 @@ const Square = ({ className, text}) => {
 
 ReactDOM.render(
   <React.StrictMode>
+
 
  <App/>
 
