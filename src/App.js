@@ -1,24 +1,26 @@
 import './App.css';
+import Tap from './Tap.js';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    inConsole = () => {
+        console.log('Первая кнопка была нажата')
+    }
+    inAlert = () => {
+        alert('Кнопка 2 была нажата')
+    }
+    inConsoleWithArg = (param) => {
+        console.log(`Функция с параметром: ${param}`)
+    }
+
+    render(){
+      return (
+        <div className="wrap">
+          <Tap label="Кнопка 1" clickFunction={this.inConsole}/>
+          <Tap label="Кнопка вторая" clickFunction={this.inAlert}/>
+          <Tap label ="Кнопка с параметром" clickFunction={this.inConsoleWithArg}/>
+        </div>
+    )};
 }
 
 export default App;
