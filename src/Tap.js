@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
 
+class Tap extends React.Component {
 
-export const Tap = ({label, onClick}) => {
+  render() {
     return (
-        <button onClick={onClick}>{label}</button>
+      <div>
+        <button onClick={() => this.props.clickFunction(this.props.label)}> {this.props.label} </button>
+      </div>
     )
+  }
 }
 
-
-export default Tap;
+export default Tap; 

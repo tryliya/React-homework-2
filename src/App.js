@@ -1,23 +1,26 @@
 import './App.css';
-import { Tap } from './Tap.js';
+import Tap from './Tap.js';
+import React from 'react';
 
-function App() {
-    let inConsole = () => {
+class App extends React.Component {
+    inConsole = () => {
         console.log('Первая кнопка была нажата')
-      }
-      let inAlert = () => {
+    }
+    inAlert = () => {
         alert('Кнопка 2 была нажата')
-      }
-      let inConsoleWithArg = (element) => {
-        console.log(element)
-      }
-  return (
-    <div className="wrap">
-      <Tap label="Кнопка 1" onClick={inConsole}/>
-      <Tap label="Кнопка вторая" onClick={inAlert}/>
-      <Tap label ="Кнопка с параметром" onClick={() => inConsoleWithArg('Функция с параметром: кнопка с параметром')}/>
-    </div>
-  );
+    }
+    inConsoleWithArg = (param) => {
+        console.log(`Функция с параметром: ${param}`)
+    }
+
+    render(){
+      return (
+        <div className="wrap">
+          <Tap label="Кнопка 1" clickFunction={this.inConsole}/>
+          <Tap label="Кнопка вторая" clickFunction={this.inAlert}/>
+          <Tap label ="Кнопка с параметром" clickFunction={this.inConsoleWithArg}/>
+        </div>
+    )};
 }
 
 export default App;
