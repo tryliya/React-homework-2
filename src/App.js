@@ -1,27 +1,25 @@
+
+import './App.css';
 import React from 'react';
 
+import data from './data.json';
+
 class App extends React.Component {
-  state = {
-    isSignedIn: false,
-  }
+  render() {
+      return (
+          <div>
+              {data.map((item, index) => {
+                  return (
+                      <div className='container' key={index}>
+                          <h3>{item.name.first}</h3>
+                          <h4>{item.name.last}</h4>
+                      </div>
+                  )
+              })}
+          </div>
+      )
+  }  
 
-  signIn = () => {
-    setTimeout(() => {
-      this.setState({isSignedIn: true})
-    }, 3000)
-  }
-
-  render(){
-    return (
-    <div>
-      {this.state.isSignedIn ? (
-        <div>Hello user</div>
-      ) : (
-        <div className='button' onClick={this.signIn}>Sign in</div>
-      )}
-    </div>
-  );
-  }
 }
 
 
